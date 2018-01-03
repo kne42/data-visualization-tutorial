@@ -18,7 +18,8 @@ matrix:
       env: TRAVIS_PYTHON_VERSION=3.5
 
 before_install:
-  - download () { curl $1 > install.sh; }
+  - source ci/travis/before_install.sh
+  - section_begin install_conda
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       download https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh;
     else
@@ -30,12 +31,10 @@ before_install:
     fi
   - bash install.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
+  - section_end install_conda
 
 install:
   - conda create -y -n data-visualization-tutorial python=3.5 matplotlib jupyter
   - source activate data-visualization-tutorial
 
-script: ci/travis.sh
-
-after_success:
-  - jupyter notebook stop
+script: ci/travis/script.sh
