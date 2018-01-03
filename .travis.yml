@@ -33,6 +33,7 @@ before_install:
 
 install:
   - conda create -y -n data-visualization-tutorial -f=conda-env.txt
+  - source activate data-visualization-tutorial
 
 script:
   - conda list --explicit
