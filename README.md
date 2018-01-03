@@ -2,12 +2,12 @@
 
 Clone the tutorial repository and change your working directory:
 ```bash
-$ git clone git@github.com:kne42/data-visualization-tutorial.git
+$ git clone https://github.com/kne42/data-visualization-tutorial.git
 $ cd data-visualization-tutorial
 ```
 
 If you do not have `git` installed, you can
-[download it as a zip](https://github.com/kne42/data-visualization-tutorial/archive/master.zip).
+[download the tutorial as a zip](https://github.com/kne42/data-visualization-tutorial/archive/master.zip).
 
 
 ## Install Conda
@@ -35,7 +35,7 @@ $ activate data-visualization-tutorial
 
 ## Activating Jupyter Notebook
 
-Start up a new notebook for the index page:
+Start up a notebook pointing to the index:
 ```bash
 $ jupyter notebook 00-overview.ipynb
 ```
