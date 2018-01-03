@@ -28,7 +28,8 @@ before_install:
         download https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh;
       fi
     fi
-  - bash install.sh -bt
+  - bash install.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
 
 install:
   - conda create env -n data-visualization-tutorial -f conda-env.txt -y
