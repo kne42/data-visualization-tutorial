@@ -34,7 +34,7 @@ before_install:
   - section_end install_conda
 
 install:
-  - conda create -y -n data-visualization-tutorial python=3.5 matplotlib jupyter
-  - source activate data-visualization-tutorial
+  - conda env create -f environment.yml
+  - source activate dv-tut
 
 script: ci/travis/script.sh

@@ -1,0 +1,5 @@
+name: dv-tut
+dependencies:
+  - python=3.5
+  - matplotlib
+  - notebook=5.1

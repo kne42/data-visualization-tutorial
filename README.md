@@ -20,17 +20,17 @@ If you haven't already, install [conda](https://conda.io/miniconda).
 
 Create a new environment with the right dependencies:
 ```
-$ conda create -n data-visualization-tutorial python=3.5 matplotlib jupyter
+$ conda env create -f environment.yml
 ```
 
 If you're on MacOS or Linux, activate the environment with:
 ```bash
-$ source activate data-visualization-tutorial
+$ source activate dv-tut
 ```
 
 Or the following if on Windows:
 ```bash
-$ activate data-visualization-tutorial
+$ activate dv-tut
 ```
 
 ## Activating Jupyter Notebook
