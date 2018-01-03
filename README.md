@@ -20,7 +20,7 @@ If you haven't already, install [conda](https://conda.io/miniconda).
 
 Create a new environment with the right dependencies:
 ```
-$ conda create -n data-visualization-tutorial -f conda-env.txt -y
+$ conda create -n data-visualization-tutorial -f=conda-env.txt -y
 ```
 
 If you're on MacOS or Linux, activate the environment with:
