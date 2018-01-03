@@ -38,4 +38,6 @@ install:
 script:
   - conda list -e --no-pip
   - jupyter notebook -y --no-browser &
+
+after_success:
   - jupyter notebook stop
