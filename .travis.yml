@@ -35,13 +35,7 @@ install:
   - conda create -y -n data-visualization-tutorial python=3.5 matplotlib jupyter
   - source activate data-visualization-tutorial
 
-script:
-  - conda list -e --no-pip
-  - jupyter notebook -y --no-browser &
-  - LIST=`jupyter notebook list`; echo "$LIST"
-  - if [[ "$LIST" == "Currently running servers:" ]]; then
-        exit 1;
-    fi
+script: ci/travis.sh
 
 after_success:
   - jupyter notebook stop
