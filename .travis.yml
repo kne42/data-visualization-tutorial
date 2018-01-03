@@ -32,7 +32,7 @@ before_install:
   - export PATH="$HOME/miniconda/bin:$PATH"
 
 install:
-  - conda create -y -n data-visualization-tutorial -f=conda-env.txt
+  - conda create -y -n data-visualization-tutorial --file=spec.txt
   - source activate data-visualization-tutorial
 
 script:
