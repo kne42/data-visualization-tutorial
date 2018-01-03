@@ -18,7 +18,7 @@ matrix:
       env: TRAVIS_PYTHON_VERSION=3.5
 
 before_install:
-  - download () { curl $0 > install.sh; }
+  - download () { curl $1 > install.sh; }
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       download https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
     else
