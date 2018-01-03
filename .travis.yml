@@ -32,9 +32,9 @@ before_install:
   - export PATH="$HOME/miniconda/bin:$PATH"
 
 install:
-  - conda create -y -n data-visualization-tutorial --file=spec.txt
+  - conda create -y -n data-visualization-tutorial matplotlib jupyter
   - source activate data-visualization-tutorial
 
 script:
-  - conda list --explicit
+  - conda list -e --no-pip
   - jupyter notebook --no-browser
