@@ -1,0 +1,4 @@
+- configure appveyor
+- add scripts to test for proper matplotlib functionality
+- create overview notebook
+- outline tutorial
