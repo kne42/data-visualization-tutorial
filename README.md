@@ -1,8 +1,12 @@
 # Data Visualization Tutorial
 
-> SciPy 2018 Conference
-> AT&T Conference Center at Austin, Texas
-> Presented by Kira Evans and David Shupe
+<blockquote><p>
+SciPy 2018 Conference
+
+AT&T Conference Center at Austin, Texas
+
+Presented by Kira Evans and David Shupe
+</p></blockquote>
 
 [![Travis Status](https://travis-ci.org/kne42/data-visualization-tutorial.svg?branch=master)](https://travis-ci.org/kne42/data-visualization-tutorial)
 [![Appveyor Status](https://ci.appveyor.com/api/projects/status/0q90ktvb2n3oxee1/branch/master?svg=true)](https://ci.appveyor.com/project/kne42/data-visualization-tutorial/branch/master)
