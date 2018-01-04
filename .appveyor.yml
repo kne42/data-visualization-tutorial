@@ -1,0 +1,40 @@
+# Much of this configuration is based off of that found in https://github.com/scikit-image/scikit-image
+
+environment:
+  matrix:
+    - CONDA: C:\Miniconda
+    - CONDA: C:\Miniconda-x64
+    - CONDA: C:\Miniconda3
+    - CONDA: C:\Miniconda3-x64
+    - CONDA: C:\Miniconda34
+    - CONDA: C:\Miniconda34-x64
+    - CONDA: C:\Miniconda35
+    - CONDA: C:\Miniconda35-x64
+    - CONDA: C:\Miniconda36
+    - CONDA: C:\Miniconda36-x64
+
+matrix:
+  fast_finish: true  # if one job fails, fail all jobs
+
+install:
+  - ECHO "Filesystem root:"
+  - ps: ls C:\
+  # If there is a newer build queued for the same PR, cancel this one.
+  # The AppVeyor 'rollout builds' option is supposed to serve the same
+  # purpose but is problematic because it tends to cancel builds pushed
+  # directly to master instead of just PR builds.
+  # credits: JuliaLang developers.
+  - ps: if ($env:APPVEYOR_PULL_REQUEST_NUMBER -and $env:APPVEYOR_BUILD_NUMBER -ne ((Invoke-RestMethod `
+        https://ci.appveyor.com/api/projects/$env:APPVEYOR_ACCOUNT_NAME/$env:APPVEYOR_PROJECT_SLUG/history?recordsNumber=50).builds | `
+        Where-Object pullRequestId -eq $env:APPVEYOR_PULL_REQUEST_NUMBER)[0].buildNumber) { `
+        throw "There are newer queued builds for this pull request, failing early." }
+  - "SET PATH=%PATH%;%CONDA%\\Scripts;%CONDA%"
+  - conda env create -f environment.yml
+  - activate dv-tut
+  - conda install -y pytest
+
+test_script:
+  - conda info -a
+  - pytest
+
+build: false  # not .NET project
