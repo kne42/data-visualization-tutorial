@@ -1,9 +1,7 @@
 # Data Visualization Tutorial
 
 > SciPy 2018 Conference
-
 > AT&T Conference Center at Austin, Texas
-
 > Presented by Kira Evans and David Shupe
 
 [![Travis Status](https://travis-ci.org/kne42/data-visualization-tutorial.svg?branch=master)](https://travis-ci.org/kne42/data-visualization-tutorial)
@@ -46,7 +44,7 @@ $ activate dv-tut
 
 ## Jupyter Magic!
 
-Start a jupyter notebook with the following:
+Open our tutorial syllabus with jupyter notebook:
 ```bash
 $ jupyter notebook 00-overview.ipynb
 ```
