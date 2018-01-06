@@ -6,7 +6,7 @@ import subprocess
 def _exec_notebook(path):
     args = ["jupyter", "nbconvert", "--to", "notebook", "--execute",
             "--ExecutePreprocessor.timeout=1000",
-            "--output", "../dummy.ipynb", path]
+            "--output", path, path]
     subprocess.check_call(args)
 
 
