@@ -34,7 +34,7 @@ before_install:
   - section_end install_conda
 
 install:
-  - conda env create -f environment.yml
+  - conda env create
   - source activate dv-tut
   - conda install -y pytest
 

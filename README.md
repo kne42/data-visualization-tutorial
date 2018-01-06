@@ -33,7 +33,7 @@ If you haven't already, install [conda](https://conda.io/miniconda).
 
 Create a new environment with the right dependencies:
 ```
-$ conda env create -f environment.yml
+$ conda env create
 ```
 
 If you're on MacOS or Linux, activate the environment with:
