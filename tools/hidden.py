@@ -12,7 +12,8 @@ if len(sys.argv) != 2:
     print("Usage: hidden.py dirname")
     sys.exit(-1)
 
-dirname = sys.argv[1]
+dirname = 'hidden/' + sys.argv[1]
+
 if dirname[-1] != '/':
     dirname += '/'
 
@@ -44,7 +45,7 @@ class Lesson:
         The directory's path.
     """
     def __init__(self, path):
-        files = os.listdir()
+        files = os.listdir(path)
         for f in files:
             if re.search(r'^.*\.md$', f):
                 setattr(self, f[:-3], _show(path + f))
