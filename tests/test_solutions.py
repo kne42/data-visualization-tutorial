@@ -19,17 +19,10 @@ def call(cmd):
 
 
 def test_read():
-    res = call('tests/solution_example.py')
-    assert res == ['#!/usr/bin/env solutions',
-                   '',
-                   '"""Hello World!"""',
-                   '']
+    res = call('sol.py tests/solution_example.py')
+    assert '"""Hello World!"""' in res
 
 
 def test_output():
-    res = call('tests/solution_print.py')
-    assert res == ['#!/usr/bin/env solutions',
-                   '',
-                   'print("""Hello World!""")',
-                   'Hello World!',
-                   '']
+    res = call('sol.py tests/solution_print.py')
+    assert 'print("""Hello World!""")' in res and 'Hello World!' in res
