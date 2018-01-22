@@ -1,3 +1,4 @@
+- write up first lesson
+- modify testing to check that solutions and hidden markdown files work correctly
 - add scripts to test for proper matplotlib functionality
 - create overview notebook
-- outline tutorial
