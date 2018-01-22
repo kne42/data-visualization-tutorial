@@ -3,5 +3,3 @@ dependencies:
   - python=3.5
   - matplotlib
   - notebook=5.1
-  - pip:
-    - .
