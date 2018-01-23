@@ -90,7 +90,15 @@ class Notebook(pytest.File):
 
         with notebook_filename.open() as f:
             nb = nbformat.read(f, as_version=4)
+
         epc = ExecutePreprocessorCell(timeout=1000)
+        def dummy(*args, **kwargs):
+            # dummy function to silence log
+            pass
+        epc.log.debug = dummy
+        epc.log.warn = dummy
+        epc.log.error = dummy
+
         epc.preprocess(nb)
         for index, cell in enumerate(nb.cells):
             yield Cell(index, self, cell, epc)
@@ -107,6 +115,9 @@ class Cell(pytest.Item):
     def runtest(self):
         self.epc.preprocess_cell(self.cell, self.epc.resources, self.cell_index)
 
-    # def repr_failure(self, excinfo):
-    #    if isinstance(excinfo.value, CellExecutionError):
-    #        return str(excinfo.value)
+    def repr_failure(self, excinfo):
+        if excinfo.errisinstance(CellExecutionError):
+            return str(excinfo.value)
+
+    def reportinfo(self):
+        return self.fspath.basename, self.cell_index, self.fspath.basename[:-6] + '::' + self.name
