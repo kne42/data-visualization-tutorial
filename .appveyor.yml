@@ -32,6 +32,6 @@ install:
 
 test_script:
   - conda info -a
-  - pytest
+  - pytest -v
 
 build: false  # not .NET project
